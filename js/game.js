@@ -6,8 +6,8 @@ let cube__for__number = document.querySelectorAll(".cube__for__number");
 let num = document.querySelectorAll(".num");
 let menu = document.querySelector(".menu");
 let startBtn = document.querySelector(".menu .start");
+let mistake = document.querySelector(".mistake");
 let selectedNumber = 1;
-
 let boardNumbers = [];
 let solution;
 let EmptyCells = 0;
@@ -33,10 +33,6 @@ function WriteNumber() {
     }
   }
 }
-for (let cube of cube__for__number) {
-  cube.addEventListener("keydown", (e) => {});
-}
-
 function putNumber() {
   for (let i = 0; i < boardNumbers.length; i++) {
     for (let j = 0; j < boardNumbers[i].length; j++) {
@@ -45,6 +41,8 @@ function putNumber() {
           moves__number.textContent++;
           if (selectedNumber == solution[i][j]) {
             row[i].children[j].textContent = selectedNumber;
+          } else {
+            mistake.textContent++;
           }
           if (row[i].children[j].textContent != "") {
             row[i].children[j].removeEventListener("click", put);
@@ -62,7 +60,7 @@ function selectNumber() {
       for (d of num) {
         d.style.border = "1px solid white";
       }
-      num[e.key - 1].style.border = "4px  dashed white";
+      num[e.key - 1].style.border = "4px  solid white";
     }
   });
   for (let selnum of num) {
@@ -71,7 +69,7 @@ function selectNumber() {
         d.style.border = "1px solid white";
       }
       selectedNumber = selnum.textContent;
-      selnum.style.border = "4px  dashed white";
+      selnum.style.border = "4px solid white";
     });
   }
 }
@@ -82,27 +80,18 @@ function win() {
       counter++;
     }
   }
-  if (moves__number.textContent == EmptyCells + 4) {
-    alert("Դուք կորցրեցիք 50% զեղչ շահելու հնարավորությունը");
-  }
-  if (moves__number.textContent == EmptyCells + 8) {
-    alert("Դուք կորցրեցիք 24% զեղչ շահելու հնարավորությունը");
-  }
-  if (moves__number.textContent == EmptyCells + 12) {
-    alert("Դուք կորցրեցիք զեղչ շահելու հնարավորությունը");
+  if (mistake.textContent == 8) {
+    alert("You lost the chance to recieve book, try again");
+    let refresh = "../Sudoku-main/index.html";
+    window.location.href = refresh;
   }
   if (counter == 81) {
-    alert("You finished the game");
-    for (let cube of cube__for__number) {
-      cube.textContent = "";
-      cube.style.backgroundColor = "rgba(0, 0, 0, 0.849)";
-    }
-    moves__number.textContent = 0;
-    gamePage.classList.remove("active");
-    menu.classList.add("active");
+    alert("congratulations you recieved book press ok for getting the book");
+    let downloadHref =
+      "../Sudoku-main/42b869ac-50b8-4a08-929b-5dba3c86b347.pdf";
+    window.location.href = downloadHref;
   }
 }
-
 function ChangeBoxes() {
   let boxesArr = ChangeRows();
   let ChangedBoxes = [];

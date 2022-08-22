@@ -6,8 +6,11 @@
   text-decoration: none;
   box-sizing: border-box;
   transition: 0.4s;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif !important;
 }
-
+body {
+  background-color: #1d1d1f;
+}
 .menu {
   width: 100%;
   height: 100vh;
@@ -28,11 +31,11 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: antiquewhite;
+  color: white;
   font-size: 1.4rem;
   cursor: pointer;
 }
-.menu .rules {
+.menu .descriptions {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -47,12 +50,12 @@
   overflow-wrap: break-word;
   hyphens: manual;
 }
-.menu .rule span {
+.menu .description span {
   overflow-wrap: break-word;
-  color: rgb(192, 19, 192);
+  color: #00c0ff;
   font-weight: 900;
 }
-.menu .rules .rule.rulehead span {
+.menu .descriptions .description.descriptionhead span {
   color: white;
   font-weight: 900;
   font: 2rem sans-serif;
@@ -77,7 +80,7 @@
   color: white;
   text-align: center;
 }
-.game__page > div:nth-child(1) {
+.game__page .information {
   display: flex;
   gap: 0.4rem;
 }
@@ -141,8 +144,7 @@
   cursor: pointer;
 }
 .numbers__for__selection div:nth-child(1) {
-  border: 4px white;
-  border-style: dashed;
+  border: 4px white solid;
 }
 @media screen and (max-width: 572px) {
   .board {
