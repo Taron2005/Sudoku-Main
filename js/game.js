@@ -82,13 +82,12 @@ function win() {
   }
   if (mistake.textContent == 8) {
     alert("You lost the chance to recieve book, try again");
-    let refresh = "../Sudoku-main/index.html";
+    let refresh = "../index.html";
     window.location.href = refresh;
   }
   if (counter == 81) {
     alert("congratulations you recieved book press ok for getting the book");
-    let downloadHref =
-      "../Sudoku-main/42b869ac-50b8-4a08-929b-5dba3c86b347.pdf";
+    let downloadHref = "../42b869ac-50b8-4a08-929b-5dba3c86b347.pdf";
     window.location.href = downloadHref;
   }
 }
