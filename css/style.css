@@ -45,7 +45,7 @@ body {
   font-weight: 400;
   font-size: 1rem;
   cursor: pointer;
-  overflow: scroll;
+  overflow-y: scroll;
   text-align: center;
   overflow-wrap: break-word;
   hyphens: manual;
