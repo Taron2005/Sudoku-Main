@@ -87,8 +87,12 @@ function win() {
   }
   if (counter == 81) {
     alert("congratulations you recieved book press ok for getting the book");
-    let downloadHref = "./42b869ac-50b8-4a08-929b-5dba3c86b347.pdf";
-    window.location.href = downloadHref;
+    gamePage.style.display = "none";
+    document.querySelector(".link").style.display = "flex";
+    document.querySelector(".link > a").addEventListener("click", () => {
+      let refresh = "./index.html";
+      window.location.href = refresh;
+    });
   }
 }
 function ChangeBoxes() {
