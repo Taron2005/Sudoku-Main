@@ -174,7 +174,11 @@ function makeBoard() {
         solution[i][j] == counter ||
         solution[i][j] == counter - 1 ||
         solution[i][j] == counter + 1 ||
-        solution[i][j] == counter + 2
+        solution[i][j] == counter + 2 ||
+        solution[i][j] == counter - 2 ||
+        solution[i][j] == counter - 3 ||
+        solution[i][j] == counter + 3 ||
+        solution[i][j] == counter + 4
       ) {
         counter++;
         testboard[i].push(solution[i][j]);
